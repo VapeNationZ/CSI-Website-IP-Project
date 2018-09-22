@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ContactUs</title>
+
+    <!-- CSS TEMPLATES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/forms.css" type="text/css" rel="stylesheet">
+
+    <style>
+        /**********SOCIAL MEDIA GLYPHS*********/
+
+        .fa {
+            padding: 0.2em;
+            font-size: 30px;
+            width: 2em;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 1px;
+        }
+
+        .fa:hover {
+            opacity: 0.8;
+            text-decoration: none;
+            color: white;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #FF0090;
+            color: white;
+        }
+
+        /**********END OF SOCIAL MEDIA GLYPHS*********/
+
+        /*CLEARFIX CODE FOR FLOAT MANAGEMENT*/
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /******END OF CLEARFIX*******/
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            display: block;
+            margin-top: 1em;
+            width: 100%;
+            padding: 0.5em;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid grey;
+            color: #211523;
+        }
+
+        textarea {
+            height: 15em;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin-top: 1em;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <nav class="topnav" id="myTopnav">
+        <a>CSI-IT</a>
+        <a href="index.html">HOME</a>
+        <a href="Events.html">EVENTS</a>
+        <a href="student.html">STUDENTS</a>
+        <a href="sponsors.html">SPONSORS</a>
+        <a href="ContactUs.html" class="active">CONTACT US</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </nav>
+
+    <header>
+        <h1>CONTACT US</h1>
+        <h2>We'd &#128150; to help!</h2>
+    </header>
+    <div class="clearfix">
+        <div class="details" style="background-color:beige">
+            <form action="contactus.php" method="post">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name.." required>
+                <label for="email"></label>
+                <input type="email" name="email" id="email_id" placeholder="Enter Your Email.." required>
+                <label for="write1"></label>
+                <textarea style="resize: none" name="write1" placeholder="Write something here.." required></textarea>
+                <input type="submit" value="Submit" name="submit" style="color: black">
+            </form>
+        </div>
+
+        <div class="address" style="background-color: firebrick;height: 38.5em">
+            <p class="glyphs"><span class="glyphicon glyphicon-map-marker"></span> FCRIT, VASHI, NAVI MUMBAI</p>
+            <p class="glyphs"><span class="glyphicon glyphicon-earphone"></span> +91 8273829364</p>
+            <p class="glyphs" style="border-bottom: 0.5px solid black; padding-bottom: 1.5em"><span class="glyphicon glyphicon-send"></span> emailus@email.com</p>
+            <div class="social-networks" style="text-align: center">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.container -->
+    <!--SCRPITS-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
