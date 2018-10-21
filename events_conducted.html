@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Events Conducted</title>
+
+    <!-- CSS TEMPLATES -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/forms.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .timeline {
+            --uiTimelineMainColor: var(--timelineMainColor, #222);
+            --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
+            position: relative;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .timeline:before {
+            content: "";
+            width: 4px;
+            height: 100%;
+            background-color: var(--uiTimelineMainColor);
+            position: absolute;
+            top: 0;
+        }
+        .timeline__group {
+            position: relative;
+        }
+        .timeline__group:not(:first-of-type) {
+            margin-top: 4rem;
+        }
+        .timeline__year {
+            padding: .5rem 1.5rem;
+            color: var(--uiTimelineSecondaryColor);
+            background-color: var(--uiTimelineMainColor);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .timeline__box {
+            position: relative;
+        }
+        .timeline__box:not(:last-of-type) {
+            margin-bottom: 30px;
+        }
+        .timeline__box:before {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background-color: var(--uiTimelineMainColor);
+            position: absolute;
+            left: 0;
+            z-index: -1;
+        }
+        .timeline__date {
+            min-width: 65px;
+            position: absolute;
+            left: 0;
+            box-sizing: border-box;
+            padding: .5rem 1.5rem;
+            text-align: center;
+            background-color: var(--uiTimelineMainColor);
+            color: var(--uiTimelineSecondaryColor);
+        }
+        .timeline__day {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+        .timeline__month {
+            display: block;
+            font-size: .8em;
+            text-transform: uppercase;
+        }
+        .timeline__post {
+            padding: 1.5rem 2rem;
+            border-radius: 2px;
+            border-left: 3px solid var(--uiTimelineMainColor);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+            background-color: var(--uiTimelineSecondaryColor);
+        }
+        @media screen and (min-width: 641px) {
+            .timeline:before {
+                left: 30px;
+            }
+            .timeline__group {
+                padding-top: 55px;
+            }
+            .timeline__box {
+                padding-left: 80px;
+            }
+            .timeline__box:before {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .timeline__date {
+                top: 50%;
+                margin-top: -27px;
+            }
+        }
+        @media screen and (max-width: 640px) {
+            .timeline:before {
+                left: 0;
+            }
+            .timeline__group {
+                padding-top: 40px;
+            }
+            .timeline__box {
+                padding-left: 20px;
+                padding-top: 70px;
+            }
+            .timeline__box:before {
+                top: 90px;
+            }
+            .timeline__date {
+                top: 0;
+            }
+        }
+        .timeline {
+            --timelineMainColor: #4557bb;
+            font-size: 16px;
+        }
+        @media screen and (min-width: 768px) {
+            html {
+                font-size: 62.5%;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            html {
+                font-size: 55%;
+            }
+        }
+        /*
+* demo page
+*/
+        @media screen and (min-width: 768px) {
+            html {
+                font-size: 62.5%;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            html {
+                font-size: 50%;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+            font-size: 1.6rem;
+            color: #222;
+            background-color: #f0f0f0;
+            margin: 0;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: scroll;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .page__demo {
+            flex-grow: 1;
+        }
+        .main-container {
+            max-width: 960px;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .page__container {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            max-width: 800px;
+        }
+        .footer {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        .footer__link {
+            text-decoration: none;
+            color: inherit;
+        }
+        @media screen and (min-width: 361px) {
+            .footer__container {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            .melnik909 {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="topnav" id="myTopnav">
+        <a class="#">TechNext</a>
+        <a href="login.php">HOME</a>
+        <a href="Events.php">EVENTS</a>
+        <a href="Students.php">STUDENTS</a>
+        <a href="sponsors.php">SPONSORS</a>
+        <a href="ContactUs1.php">CONTACT US</a>
+        <a href="logout.php">LOGOUT</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+    </nav>
+    <div class="page">
+        <h2>Events Conducted</h2>
+        <div class="page-demo">
+            <div class="main-container page__container">
+                <div class="timeline">
+                    <div class="timeline__group">
+                        <span class="timeline__year">2018</span>
+                        <div class="timeline__box">
+                            <div class="timeline__date">
+                                <span class="timeline__day">2</span>
+                                <span class="timeline__month">Feb</span>
+                            </div>
+                            <div class="timeline__post">
+                                <div class="timeline__content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione eaque odit minima veniam molestiae. Aut commodi ab accusamus quas nihil, quia voluptas. Dolore iste nisi, explicabo vel animi qui porro?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline__box">
+                            <div class="timeline__date">
+                                <span class="timeline__day">1</span>
+                                <span class="timeline__month">Sept</span>
+                            </div>
+                            <div class="timeline__post">
+                                <div class="timeline__content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores rem commodi consequuntur, non quam. Explicabo debitis illo facere perspiciatis vero, inventore quibusdam et voluptates quas earum delectus. Neque, explicabo, libero.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline__group">
+                        <span class="timeline__year">2017</span>
+                        <div class="timeline__box">
+                            <div class="timeline__date">
+                                <span class="timeline__day">14</span>
+                                <span class="timeline__month">Jul</span>
+                            </div>
+                            <div class="timeline__post">
+                                <div class="timeline__content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quidem culpa minus dolores nulla nobis natus, distinctio beatae atque officiis esse deleniti ducimus dolore nesciunt quam, animi cupiditate nostrum laudantium.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline__group">
+                        <span class="timeline__year">2016</span>
+                        <div class="timeline__box">
+                            <div class="timeline__date">
+                                <span class="timeline__day">28</span>
+                                <span class="timeline__month">Aug</span>
+                            </div>
+                            <div class="timeline__post">
+                                <div class="timeline__content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque unde fugit incidunt maiores odio repellat rerum placeat expedita ipsum iusto, deserunt, minus voluptatem vitae facere repudiandae vel? Eligendi, tempore rerum!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <small>Follow us at!</small>
+        <div class="social-networks" style="text-align: center">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </footer>
+    <!-- /.container -->
+    <!--SCRPITS-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+
+</html>
