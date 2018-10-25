@@ -26,7 +26,7 @@ $mail->SMTPSecure = "ssl";
 $mail->Port = 465;
 $mail->SMTPAuth = true;
 $mail->Username = 'joslynpereira777@gmail.com';
-$mail->Password = 'rayquazajos123';
+$mail->Password = 'your password';
 
 $mail->setFrom('joslynpereira777@gmail.com', 'CSI Team');
 $mail->addAddress($email);
